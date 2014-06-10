@@ -8,7 +8,7 @@
 # Add each story to an array and display your "Front page"
 
 require 'rest_client'
-require 'json'
+require 'json'		
 
 def get_mashable_stories # Pulls the json and parses story
 	response = JSON.parse(RestClient.get 'http://mashable.com/stories.json')
