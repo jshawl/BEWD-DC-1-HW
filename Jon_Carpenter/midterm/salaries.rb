@@ -15,11 +15,14 @@ require 'json'
 # end
 # get_digg_stories
 
-def get_angel_roles
+def get_angel_titles
+
+	roles = []
+
 	angel = JSON.parse(RestClient.get 'https://api.angel.co/1/jobs')
  
  	angel['jobs'].each do |info| 
- 		puts info["title"] + info["salary_min"] + info["salary_max"]
+ 		puts info["title"]
 
 	end
 
@@ -65,5 +68,5 @@ get_angel_roles
  #           "job5" =>1
  #         }
 
-	# end
+# end
 
