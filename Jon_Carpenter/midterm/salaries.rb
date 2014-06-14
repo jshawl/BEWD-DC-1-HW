@@ -15,21 +15,48 @@ require 'json'
 # end
 # get_digg_stories
 
-def get_angel_titles
+# def get_angel_titles
 
-	roles = []
-
-	angel = JSON.parse(RestClient.get 'https://api.angel.co/1/jobs')
+# 	angel = JSON.parse(RestClient.get 'https://api.angel.co/1/jobs')
  
- 	angel['jobs'].each do |info| 
- 		puts info["title"]
+#  	angel['jobs'].each do |info| 
+#  		puts info["title"]
 
+# 	end
+
+#  end
+
+class Jobs
+
+	attr_accessor
+
+	def initialize(title, salary_min)
+		@title = title
+		@salary_min = salary_min
+	end 
+
+	def get_angel_low_salaries
+		def salary_min
+		end
+
+		def salaries_hash
+			salaries_hash = {}
+		end
+
+		angel_salaries = JSON.parse(RestClient.get 'https://api.angel.co/1/jobs')
+	 		angel_salaries['jobs'].each do |info| 
+	 			puts info["salary_min"]
+	 			# salaries_array.inspect
+	 			# puts info["salary_min"]
+		end
 	end
+end
 
- end
+# puts get_angel_titles.titles
 
-get_angel_roles
+puts get_angel_low_salaries.salary_min
 
+# salaries_array <= get_angel_low_salaries.salary_min.each
 
 
 # def result
