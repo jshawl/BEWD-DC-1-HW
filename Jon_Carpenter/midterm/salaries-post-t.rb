@@ -16,25 +16,15 @@ require 'json'
 
 		job_postings.sort_by! { |k| k[:min] }
 
-		possibilities = []
-
-		job_postings.each do |job| 
-	 		if job[:min] > user_min_sal 
-	 			possibilities << "#{job[:title]}:, #{job[:min]}"
+		job_postings.each do |job|
+			puts "#{job[:title]}: #{job[:min]}"
 		end
 
-		# puts possibilities
 
-	end	
 
-puts "MAGIC TECH JOBS 8-BALL SAYS: THIS IS YOUR JOB"
 
-puts possibilities.sample
-
-end
-	
+	end
 	get_angel_salaries
-
 	# def find_jobs_with_salary(users_salary)
 	# 	get_angel_salaries.each do |jobs|
 	# 		if jobs[0] == users_salary
@@ -55,3 +45,5 @@ end
 
 # puts '========== Angel Jobs ========='
 # get_angel_roles
+
+# end
